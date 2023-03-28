@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+{% if stylesheets %}
+ <link rel="stylesheet" href="{{ asset(stylesheets) }}" />
+{{ form_start(form, {'attr': {'class': 'form-group'}}) }}
+        <div class="form-group">
+            {{ form_label(form.username, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                {% if form.username.vars.errors|length %}
+                    {% for error in form.username.vars.errors %}
+                        <div class="alert alert-danger">{{ error.message }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+  <div class="form-group">
+            {{ form_label(form.password.first, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.password.first, {'attr': {'class': 'form-control'}}) }}
+                {% if form.password.first.vars.errors|length %}
+                    {% for error in form.password.first.vars.errors %}
+                        <div class="alert alert-danger">{{ error.message }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+  <div class="form-group">
+            {{ form_label(form.password.second, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-10">
+                {{ form_widget(form.password.second, {'attr': {'class': 'form-control'}}) }}
+                {% if form.password.second.vars.errors|length %}
+                    {% for error in form.password.second.vars.errors %}
+                        <div class="alert alert-danger">{{ error.message }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+<div class="form-group">
+    {{ form_label(form.prenom, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.nom, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.sexe, null, {'label_attr': {'class': 'col-sm-2 control-label form-check-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.sexe, {'attr': {'class': 'form-check '}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.epreuve_choisie, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.epreuve_choisie, {'attr': {'class': 'form-select'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.parcours, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.parcours, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.taille_maillot, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.taille_maillot, {'attr': {'class': 'form-select'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.numero_dossard, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.numero_dossard, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.categorie_age, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.categorie_age, {'attr': {'class': 'form-select'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.type_epreuve, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.type_epreuve, {'attr': {'class': 'form-select'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.birth, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.birth, {'attr': {'class': 'form-select'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.date_epreuve, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.date_epreuve, {'attr': {'class': 'form-select'}}) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.submit, null, {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+    <div class="col-sm-10">
+        {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+    </div>
+</div>
+{{ form_end(form) }}
+{% endif %}
+{% endblock %}

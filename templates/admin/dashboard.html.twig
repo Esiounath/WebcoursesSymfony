@@ -1,0 +1,38 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+{% block content_title %}Utilisateurs inscrits{% endblock %}
+{% block main %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Derniers utilisateurs inscrits</h1>
+                        {% for user in users %}
+                            <ul class="list-group">
+                            <h1 class="h1">{{ user.username }}</h1>
+                            <label>Prénom:<li class="list-group-item list-group-item-primary">{{ user.prenom }}</li></label>
+                            <label>Nom:<li class="list-group-item list-group-item-primary">{{ user.nom }}</li></label>
+                            <label>Nom d'utilisateur:<li class="list-group-item list-group-item-primary">{{ user.username }}</li></label>
+                            <label>Jour d'inscription<li class="list-group-item list-group-item-action list-group-item-dark">{{user.day|date('d/m/Y h:m:s') }}</li></label>
+                            <label>Mot de Passe<li class="list-group-item list-group-item-action list-group-item-alert">{{user.password }}</li></label>
+                            <label>Adresse IP<li class="list-group-item list-group-item-action list-group-item-warning">{{user.ip}}</li></label>
+
+                            </ul>
+                        {% endfor %}
+                </div>
+            </div>
+        </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Log</h1>
+                        {% for logs in log %}
+                            <ul class="list-group">
+                            <label>Utilisateur:<li class="list-group-item list-group-item-primary">{{ logs.utilisateur }}</li></label>
+                            <label>mot de Passe:<li class="list-group-item list-group-item-primary">{{ logs.password }}</li></label>
+                            <label>Nom d'utilisateur:<li class="list-group-item list-group-item-primary">{{ logs.jour|date('d/m/Y h:m:s') }}</li></label>
+                            <label>IP<li class="list-group-item list-group-item-action list-group-item-dark">{{logs.ip }}</li></label>
+                            </ul>
+                        {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.1.7);
+    height: 3em;
+  }
+  .javastock{
+    position: absolute;
+    top: 1%;
+  }
+  .titre{
+      color: whitesmoke;
+      position: absolute;
+      font-size: 2em;
+      font-weight: 300;
+      font-style: italic;
+      text-transform: uppercase;
+      bottom:45% ;
+      left: 25%;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .topnav a {
+    float: left;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    line-height:20px;
+    position: relative;
+    left: 20%;
+    flex-direction: row;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover,.topnav a.active:hover{
+    color: whitesmoke;
+    font-size: 24px;
+    transform: translateY(2px);
+  }
+  
+  .topnav a.active {
+    color: black;
+  }
+  .container{
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+  }
+  .inscription{
+    position: absolute;
+    fill: rgba(0,0,0,0.7);
+    bottom: 30%;
+    left: 25%;
+    height: 6%;
+    width: 6%;
+    border-radius: 35%;
+    margin-left: 5%;
+  }
+  .connexion{
+    position: absolute;
+    bottom: 30%;
+    fill: rgba(0,0,0,0.7);
+    left: 33%;
+    height: 6%;
+    width: 6%;
+    border-radius: 35%;
+    margin-left: 5%;
+  }
+  .contact{
+    position: absolute;
+    bottom: 30%;
+    left: 40%;
+    fill: rgba(0,0,0,0.7);
+    height: 6%;
+    width: 6%;
+    border-radius: 35%;
+    margin-left: 5%;
+  }
+  .calendar{
+    position: absolute;
+    bottom: 30%;
+    fill: rgba(0,0,0,0.7);
+    left: 47%;
+    height: 6%;
+    width: 6%;
+    border-radius: 35%;
+    margin-left: 5%;
+  }
+  svg:hover{
+    height: 10%;
+    width: 10%;
+    transform: translateY(2px);
+    fill: #fff;
+  }
+  .topnav svg{
+    height: 2em;
+    width: 2em;
+  }
+  .slider{
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      box-sizing: border-box;
+  
+  }
+  .container img{
+      max-width: 100%;
+  }
+  .slider img{
+      flex: 1;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      top:  0%;
+      display: none;
+      transition: opacity .5s;
+  
+  }
+  @keyframes fade {
+      from{
+          opacity: 0;
+      }
+      to{
+          opacity: 1;
+      }
+  }
+  img.active{
+      display: block;
+      max-width: 100%;
+      animation: fade 2.5s;
+  }
+  body{
+      background-image: url('https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1100&q=80');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+  }

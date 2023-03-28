@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CompteController!{% endblock %}
+
+{% block content %}
+       <link rel="stylesheet" href="{{ asset(stylesheets) }}" />
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Bienvenue coureur {{app.user.prenom}} {{app.user.nom}}</h1>
+<ul class="list-group">
+  <label>Epreuve choisie<li class="list-group-item list-group-item-action list-group-item-primary">{{app.user.epreuveChoisie}}</li></label>
+    <label>Type d'epreuve<li class="list-group-item list-group-item-action list-group-item-success">{{app.user.typeEpreuve}}</li></label>
+    <label>Parcours<li class="list-group-item list-group-item-action list-group-item-info">{{app.user.parcours}}</li></label>
+    <label>Numero de Dossard<li class="list-group-item list-group-item-action list-group-item-warning">{{app.user.numeroDossard}}</li></label>
+  <label>Date d'epreuve<li class="list-group-item list-group-item-action list-group-item-danger">{{ app.user.dateEpreuve|date('d/m/Y') }}</li></label>
+  <label>Jour d'inscription<li class="list-group-item list-group-item-action list-group-item-dark">{{ app.user.day|date('d/m/Y') }}</li></label>
+</ul>
+</div>
+{% endblock %}

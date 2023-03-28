@@ -1,0 +1,28 @@
+Clear cache
+php bin/console cache:clear
+php bin/console doctrine:schema:create
+Mapping tables database to Entity:
+php bin/console doctrine:mapping:convert annotation ./src/Entity --from-database --force
+Generate all getters and setters of entities: 
+php bin/console make:entity --regenerate(don't forgot insert namespace App\Entity)
+php bin/console doctrine:schema:update --force
+Create database from terminal: 
+php bin/console doctrine:database:create
+Show route from App web:
+symfony console debug:router
+
+use Symfony\Component\Security\Core\User\UserInterface;
+class User implements UserInterface,PasswordAuthenticatedUserInterface
+ public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getUserIdentifier():string
+    {
+        return $this->username;
+    }
+Dashboard admin:
+symfony console make:admin:dashboard 
+symfony console make:admin:crud
+
